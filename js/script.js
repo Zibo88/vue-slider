@@ -66,7 +66,7 @@ var app = new Vue (
 
             },
             thumbCurrentElement(indexElement){
-                this.currentElementActive = index
+                this.currentElementActive = indexElement
             }
 
             
