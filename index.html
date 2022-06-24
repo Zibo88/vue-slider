@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Carosello News</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Slider</title>
+</head>
+<body>
+
+    <div id="app">
+
+        
+
+        <div class="container" >
+            <div class="slider-wrapper" tabindex="0">
+                <div  class="item">
+                    <img :src= "'img/' + slides[currentElementActive].image"  :alt="slides.title" />
+                    <div class="text">
+                        <h3>{{slides[currentElementActive].title}}</h3>
+                        <p>
+                           {{slides[currentElementActive].text}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="thumbs">
+                    <!-- su -->
+                    <div @click="previusPhoto" class="prev"></div>
+                    <!-- giu -->
+                    <div @click="nextPhoto" class="next"></div>
+                    <div v-for = "(image, index) in slides"  :class="{'active' : index ===  currentElementActive}"   class="thumb" > 
+                        <img @click="thumCurrentElement(image,index)" :src="'img/' + slides[index].image" alt="slides.title"/>
+                    </div>
+                    <!-- <div class="thumb">
+                        <img @click="" src="img/02.jpg" alt="Svizzera" />
+                    </div>
+                    <div class="thumb">
+                        <img @click="" src="img/03.jpg" alt="Gran Bretagna" />
+                    </div>
+                    <div class="thumb">
+                        <img @click="" src="img/04.jpg" alt="Germania" />
+                    </div>
+                    <div class="thumb">
+                        <img @click="" src="img/05.jpg" alt="Paradise" />
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
